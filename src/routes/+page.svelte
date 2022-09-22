@@ -11,6 +11,8 @@
   
     
     onMount(() => {
+
+        console.log("this is onmount firing BEFORE THE PYM STUFF");
   
       pymChild = new pym.Child();
   
@@ -25,7 +27,7 @@
   
       });
   
-       console.log("this is onmount firing");
+       console.log("this is onmount firing AFTER TEH PYM STUFF");
     })
   
   

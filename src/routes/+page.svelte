@@ -1,8 +1,9 @@
 <script>
 
-    import { tweened } from "svelte/motion";
-  
+
     import { onMount } from 'svelte';
+  
+    import Scatterplot from "./Scatterplot.svelte";
   
    
   
@@ -10,8 +11,10 @@
   
     
     onMount(() => {
+
+        console.log("this is onmount firing BEFORE THE PYM STUFF");
   
-      pymChild = new pym.Child();
+      /*pymChild = new pym.Child();
   
       pymChild.onMessage('set', (d) => {
         
@@ -19,52 +22,48 @@
         
         current_Step = index;
   
-        console.log("pymchild has received a message. the index is...");
+        console.log("pymchild has rreceived a message. the index is...");
         console.log(index);
   
-      });
+      }); */
   
-       console.log("this is onmount firing");
+       console.log("this is onmount firing AFTER TEH PYM STUFF");
     })
   
-  
-    let number = tweened(0);
-  
-    $: if (current_Step == 0) {
-      number.set(100);
-    } else if (current_Step == 1) {
-      number.set(200);
-    } else if (current_Step == 2) {
-      number.set(300);
-    } 
   
   console.log("this is the script section of the +svelte page");
   
   </script>
   
+  
+  
+  
+  
   <section>
   
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
   
-    <div class='sticky'>{Math.round($number)}</div>
-    <p>yo</p>
+    <div class="sticky">
+      <Scatterplot step={current_Step} />
+    </div>
+   
     
   
   
   </section>
   
   <style>
+  
+    :global(body) {
+          overflow-x: hidden;
+      }
+  
+  
       
       .sticky {
           position:sticky;
-          bottom:0;
-          left:0;
-      font-size:20em;
+          top:10%;
+      flex: 1 1 60%;
+      width: 60%;
       }
   
   

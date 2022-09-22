@@ -1,3 +1,69 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<p>dfdfd</p>
+<script>
+
+
+    import { onMount } from 'svelte';
+  
+    import Scatterplot from "./Scatterplot.svelte";
+  
+   
+  
+    let current_Step;
+  
+    
+    onMount(() => {
+  
+      pymChild = new pym.Child();
+  
+      pymChild.onMessage('set', (d) => {
+        
+        const { index } = JSON.parse(d);
+        
+        current_Step = index;
+  
+        console.log("pymchild has rreceived a message. the index is...");
+        console.log(index);
+  
+      });
+  
+       console.log("this is onmount firing");
+    })
+  
+  
+  console.log("this is the script section of the +svelte page");
+  
+  </script>
+  
+  
+  
+  
+  
+  <section>
+  
+  
+    <div class="sticky">
+      <Scatterplot step={current_Step} />
+    </div>
+   
+    
+  
+  
+  </section>
+  
+  <style>
+  
+    :global(body) {
+          overflow-x: hidden;
+      }
+  
+  
+      
+      .sticky {
+          position:sticky;
+          top:10%;
+      flex: 1 1 60%;
+      width: 60%;
+      }
+  
+  
+  
+  </style>

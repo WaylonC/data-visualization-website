@@ -14,7 +14,7 @@
 
         console.log("this is onmount firing BEFORE THE PYM STUFF");
   
-      /*pymChild = new pym.Child();
+      pymChild = new pym.Child();
   
       pymChild.onMessage('set', (d) => {
         
@@ -25,7 +25,7 @@
         console.log("pymchild has rreceived a message. the index is...");
         console.log(index);
   
-      }); */
+      }); 
   
        console.log("this is onmount firing AFTER TEH PYM STUFF");
     })

@@ -3,51 +3,21 @@
 	Scrollytelling component from Russell Goldenberg https://twitter.com/codenberg/status/1432774653139984387 */
 	
   import Scrolly from "./Scrolly.svelte";
-  //import Scatterplot from "./Scatterplot.svelte";
-  import Map from "./map.svelte";
-  import { onMount } from 'svelte';
+  import Scatterplot from "./Scatterplot.svelte";
 	
-  //let value;
-  let current_Step = 0;
+  let value;
   
-  //uncomment this when you want to switch to wordpress scrolly
-  // const steps = [
-	// 	 "<p>This is a dynamic, responsive scatterplot that uses Russell Goldenberg's <a href='	https://twitter.com/codenberg/status/1432774653139984387' target='_blank'><code>Scrolly</code></a> to update its points' values on scroll.</p>",
-  //   "<p>The scatterplot uses tweened values to automatically update your points with smooth transitions. It also binds to the width of the container <code>div</code>, so its responsive by default.</p>",
-  //   "<p>Try resizing me to see the 'side-by-side' version, compared to the 'text-on-top' version that appears on small screens.</p><p>Want it to always appear 'text-on-top'? Just comment out the media query at the bottom of our styles (as in, leave the styles but comment out the surrounding <code>media</code> query).</p>",
-  // ];
-
-
-
-  //comment the onmoutn thing below when you want to switch to in-svelte scrolly
-  onMount(() => {
-
-    pymChild = new pym.Child();
-
-    pymChild.onMessage('set', (d) => {
-  
-      const { index } = JSON.parse(d);
-  
-      current_Step = index;
-
-      console.log("pymchild has received a message. the index is...");
-      console.log(index);
-
-    });
-
-  console.log("this is onmount firing");
-  })
-
-
-
-
+  const steps = [
+		 "<p>This is a dynamic, responsive scatterplot that uses Russell Goldenberg's <a href='	https://twitter.com/codenberg/status/1432774653139984387' target='_blank'><code>Scrolly</code></a> to update its points' values on scroll.</p>",
+    "<p>The scatterplot uses tweened values to automatically update your points with smooth transitions. It also binds to the width of the container <code>div</code>, so its responsive by default.</p>",
+    "<p>Try resizing me to see the 'side-by-side' version, compared to the 'text-on-top' version that appears on small screens.</p><p>Want it to always appear 'text-on-top'? Just comment out the media query at the bottom of our styles (as in, leave the styles but comment out the surrounding <code>media</code> query).</p>",
+  ];
 </script>
 
 <section>
 	
-  <!-- uncomment when you want in-svelte scrolly -->
+  
   <div class="section-container">
-    <!--
     <div class="steps-container">
       <Scrolly bind:value>
         {#each steps as text, i}
@@ -57,16 +27,13 @@
         {/each}
         <div class="spacer" />
       </Scrolly>
-    </div> -->
-
-
-    
-    <div class="sticky">
-      <!--<Scatterplot step={value} />-->
-      <!-- <Map step={value}/> -->
-      <Map step={current_Step} />
     </div>
 
+
+
+    <div class="sticky">
+      <Scatterplot step={value} />
+    </div>
 
 
 
@@ -164,12 +131,3 @@
     }
   }
 </style>
-
-
-
-
-  
-
-
-  
-

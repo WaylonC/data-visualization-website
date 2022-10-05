@@ -2,8 +2,8 @@
 	/* By Connor Rothschild https://twitter.com/CL_Rothschild
 	Scrollytelling component from Russell Goldenberg https://twitter.com/codenberg/status/1432774653139984387 */
 	
-  import Scrolly from "./Scrolly.svelte";
-  import Scatterplot from "./Scatterplot.svelte";
+  import Scrolly from "../src/routes/Scrolly.svelte";
+  import Scatterplot from "../src/routes/Scatterplot.svelte";
 	
   let value;
   

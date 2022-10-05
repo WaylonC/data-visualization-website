@@ -20,11 +20,11 @@
   //map stuff
   let data = [];
   const width = "960";
-  const height = "960";
+  const height = "700";
 
 
   //projecton stuff
-  const projection = geoMercator().scale(38000).center([-98.70,29.37]).translate([487.5, 305]);
+  const projection = geoMercator().scale(38000).center([-98.5,29.47]).translate([487.5, 305]);
   const path = geoPath().projection(projection);
 
 
@@ -144,7 +144,7 @@
 
 
 
-<svg width="960" height="500" bind:this={my_thing}>
+<svg width={width} height={height} bind:this={my_thing}>
 
 
   
@@ -169,8 +169,3 @@
   {/each}
 
 </svg>
-
-
-
-  
-

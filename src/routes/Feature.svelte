@@ -40,11 +40,8 @@
     d={featurePath}
     class="provinceShape"
     fill={$color}
-    
-
-
-  
-    
+    opacity=50%
+      
 />
 
 

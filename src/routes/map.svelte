@@ -19,8 +19,10 @@
 
   //map stuff
   let data = [];
-  const width = "960";
-  const height = "700";
+  // const width = "960";
+  // const height = "700";
+  const width = "2000";
+  const height = "1500";
 
 
   //projecton stuff

@@ -21,7 +21,7 @@ const tweenedY = tweened(c_cy, {
 });
 
 
-const tweenedOpacity = tweened(1, {
+const tweenedOpacity = tweened(0, {
       duration: 1200
 });
 
@@ -47,11 +47,18 @@ $: {
   if (step == 0) {
     tweenedX.set(c_cx);
     tweenedY.set(c_cy);
+    tweenedOpacity.set(1);
   }
-  if (step == 1) {
-    tweenedX.set(c_cx);
-    tweenedY.set(c_cy);
-  }
+   if (step == 1) {
+     tweenedX.set(c_cx);
+     tweenedY.set(c_cy);
+   }
+   if (step == 2) {
+     tweenedX.set(c_cx);
+     tweenedY.set(c_cy);
+     //need to also set opacity fade in for below-70s....
+     tweenedOpacity.set(1);
+   }
 }
 
 
@@ -90,8 +97,8 @@ $: {
 			fill='{c_fill}'
 			stroke='{c_stroke}'
 			stroke-width='{c_strokeWidth}'
-			cx='{c_cx}'
-			cy='{c_cy}'
+			cx='{$tweenedX}'
+			cy='{$tweenedY}'
 			r='{c_r}'
       opacity='{$tweenedOpacity}'
 />

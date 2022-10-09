@@ -3,13 +3,12 @@
 export let step = 0;
 
 import { LayerCake, Svg, Html } from 'layercake';
-import { scaleOrdinal, scaleLinear, scaleBand, scalePoint, scaleQuantize, scaleSequential } from 'd3-scale';
-import { extent } from "d3-array";
+import { scaleQuantize } from 'd3-scale';
 import Key from './Key-html.svelte';
 import AxisX from './AxisX.svelte';
 import Beeswarm from './BeeswarmForce.svelte';
-import { tweened } from "svelte/motion";
 import data from './for_beeswarm.js';
+import { onMount } from "svelte";
   
 const width = 1200;
 const height = 500;
@@ -23,17 +22,17 @@ const rKey = 'pop_total';
   
 //const r = 6;
   
-const seriesNames = new Set();
+const seriesNames = new Set(); //I can probably delete this and the thing below it
 const seriesColors = ['#fc0', '#000'];
 
 
 
-//const hispExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
-let colorScale_hisp = scaleLinear()
-    .domain([0,100])
-    .range(["#53bd1a","#b5321b"]);
-  
 
+
+// let colorScale_hisp = scaleLinear()
+//     .domain([0,100])
+//     .range(["#53bd1a","#b5321b"]);
+  
 // let seriesColors_better = [];
 
 // for (let i = 0; i < 100; i+=5) {
@@ -60,44 +59,45 @@ const seriesColors_better = [
 
 
 
-console.log(seriesColors_better);
-//console.log(seriesColors);
 
 
+let dataTransformed = [];
 
+
+onMount(async function() { //BEGIN ONMOUNT
 
   
 
-const dataTransformed = data
-    .filter(checkNotOutlier)
-    //.filter(checkBelowMedian)
-    .map(d => {
-    
-        seriesNames.add(d[zKey]);
+  dataTransformed = data
+      .filter(checkNotOutlier)
+      //.filter(checkBelowMedian)
+      .map(d => {
+      
+          seriesNames.add(d[zKey]);
 
-            return {
-            [titleKey]: d[titleKey],//(Math.random() * 2 - 1),//d[xKey],
-            [zKey]: d[zKey],
-            [xKey]: d[xKey], //trump diff
-            [rKey]: d[rKey]
-            }
-    })
-
-
-function checkNotOutlier(temp_data) {
-    if ((temp_data[xKey] < 10) && (temp_data[xKey] > -10)) {  //if you cannot get the radius to change based on pop size, add this : && (temp_data[popKey] > 100)
-        return temp_data;
-    }
-}
-
-function checkBelowMedian(temp_data) {
-    //if (temp_data[zKey] == 'More than 70' ) {
-        return temp_data;
-    //}
-}
+              return {
+              [titleKey]: d[titleKey],//(Math.random() * 2 - 1),//d[xKey],
+              [zKey]: d[zKey],
+              [xKey]: d[xKey], //trump diff
+              [rKey]: d[rKey]
+              }
+      })
 
 
+  function checkNotOutlier(temp_data) {
+      if ((temp_data[xKey] < 10) && (temp_data[xKey] > -10)) {  //if you cannot get the radius to change based on pop size, add this : && (temp_data[popKey] > 100)
+          return temp_data;
+      }
+  }
 
+  function checkBelowMedian(temp_data) {
+      //if (temp_data[zKey] == 'More than 70' ) {
+          return temp_data;
+      //}
+  }
+
+
+}); //END ONMOUNT
 
   
   </script>

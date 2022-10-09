@@ -12,7 +12,7 @@
   import { tweened } from "svelte/motion";
   import { interpolate } from "d3-interpolate";
   import Feature from "./Feature.svelte";
-    import { select_multiple_value, xlink_attr } from "svelte/internal";
+  import { select_multiple_value, xlink_attr } from "svelte/internal";
 
 
   
@@ -32,6 +32,7 @@
 
 
   //color stuff
+  
   let colorScale_hisp = ()=> {};
   let colorScale_trumpdiff = ()=> {};
   const opacity = tweened(0, {

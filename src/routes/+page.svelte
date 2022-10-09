@@ -2,8 +2,9 @@
 
 	
   import { onMount } from 'svelte';
-  import Map from "./map.svelte";
-	
+  import Map from "./Component_Map.svelte";
+  import MyBeeSwarm from "./Component_Beeswarm.svelte";
+    
   //let value;
   let current_Step = 0;
   
@@ -33,7 +34,7 @@
 </script>
 
 <section>
-	
+    
 
 
 
@@ -43,22 +44,23 @@
       
     </div> -->
 
-<Map step={current_Step} />
+<!-- <Map step={current_Step} /> -->
 
+<MyBeeSwarm />
 
 </section>
 
 <style>
-	:global(body) {
-		/*overflow-x: hidden; */ /*this freaks out when used with the second_svelte map, but was important previously with the d-3 map*/
-	}
-	
+    :global(body) {
+        /*overflow-x: hidden; */ /*this freaks out when used with the second_svelte map, but was important previously with the d-3 map*/
+    }
+    
   /* importn */
 
   .sticky {
     position: sticky;
     top: 10%;
-		/*flex: 1 1 60%;
+        /*flex: 1 1 60%;
     width: 70%;*/
   }
 

@@ -28,7 +28,8 @@
       const { index } = JSON.parse(d);
   
       current_Step = index;
-      selected = options[current_Step];
+      
+      //selected = options[current_Step];
 
       console.log("pymchild has received a message. the index is...");
       console.log(index);
@@ -55,9 +56,9 @@
   </select>
     
 
-  <svelte:component this={selected.component}/>
+ <!-- <svelte:component this={selected.component}/> -->
 
-<!-- <Map step={current_Step} /> -->
+ <Map step={current_Step} /> 
 
 
 <!-- <MyBeeSwarm step={current_Step} /> -->

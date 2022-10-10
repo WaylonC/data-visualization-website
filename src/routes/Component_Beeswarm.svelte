@@ -52,11 +52,12 @@
           seriesNames.add(d[zKey]);
   
               return {
-              [titleKey]: d[titleKey],//(Math.random() * 2 - 1),//d[xKey],
+              [titleKey]: d[titleKey],
               [zKey]: d[zKey],
               [xKey]: d[xKey], //trump diff
               [rKey]: d[rKey]
               }
+
       })
   
   
@@ -83,11 +84,7 @@
     }
     </style>
   
-    <select bind:value={step}>
-      <option value=0> 0 </option>
-      <option value=1> 1 </option>
-      <option value=2> 2 </option>
-    </select>
+    
   
   
   
@@ -132,6 +129,8 @@
 
   <!-- 
 
+    it's .95 for xstrength
+    and .075 for ystrength
 
   //const hispExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
   let colorScale_hisp = scaleLinear()

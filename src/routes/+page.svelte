@@ -7,7 +7,7 @@
   import OG from "./og.svelte";
     
   //let value;
-  let current_Step = 1;
+  let current_Step = 0;
 
   //diff components
   const options = [
@@ -28,7 +28,7 @@
       const { index } = JSON.parse(d);
   
       current_Step = index;
-      selected = options[current_step];
+      selected = options[current_Step];
 
       console.log("pymchild has received a message. the index is...");
       console.log(index);

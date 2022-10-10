@@ -4,6 +4,7 @@
   import { onMount } from 'svelte';
   import Map from "./Component_Map.svelte";
   import MyBeeSwarm from "./Component_Beeswarm.svelte";
+  import OG from "./og.svelte";
     
   //let value;
   let current_Step = 0;
@@ -46,7 +47,9 @@
 
 <!-- <Map step={current_Step} /> -->
 
-<MyBeeSwarm />
+<!-- <MyBeeSwarm step={current_Step} /> -->
+
+<OG step={current_Step}/>
 
 </section>
 

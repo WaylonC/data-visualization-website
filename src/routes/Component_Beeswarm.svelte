@@ -15,32 +15,18 @@
   const height = 500;
   
   const xKey = 'votes_trump_difference';
-  
-  //const zKey = 'hispanic_above_70';
   const zKey = 'pop_hisp_pct';
   const titleKey = 'hispanic_above_70';
   const rKey = 'pop_total';
     
-  //const r = 6;
+
     
   const seriesNames = new Set();
   const seriesColors = ['#fc0', '#000'];
   
   
   
-  //const hispExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
-  let colorScale_hisp = scaleLinear()
-      .domain([0,100])
-      .range(["#53bd1a","#b5321b"]);
-    
-  
-  // let seriesColors_better = [];
-  
-  // for (let i = 0; i < 100; i+=5) {
-  //   seriesColors_better.push(colorScale_hisp(i));
-  // }
-  
-  //const seriesColors_better = ['#ffdecc', '#ffc09c', '#ffa06b', '#ff7a33'];
+
   
   const seriesColors_better = [
   '#FBFAFE',
@@ -57,22 +43,10 @@
   ]
   
   
-  
-  
-  
-  console.log(seriesColors_better);
-  //console.log(seriesColors);
-  
-  //let dataTransformed = [];
-  
-  
-  //onMount(async function() { //BEGIN ONMOUNT
-  
     
   
   const dataTransformed = data
       .filter(checkNotOutlier)
-      //.filter(checkBelowMedian)
       .map(d => {
       
           seriesNames.add(d[zKey]);
@@ -92,16 +66,8 @@
       }
   }
   
-  function checkBelowMedian(temp_data) {
-      //if (temp_data[zKey] == 'More than 70' ) {
-          return temp_data;
-      //}
-  }
-  
-  
-  //} //END ONMOUNT
-  
-    
+
+      
     </script>
     
     <style>
@@ -160,24 +126,27 @@
   
     </div>
   
-    <!--
-      BACKUP LAYERCAKE!!!
+
+
+  <!-- DETRTIUS!! -->
+
+  <!-- 
+
+
+  //const hispExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
+  let colorScale_hisp = scaleLinear()
+      .domain([0,100])
+      .range(["#53bd1a","#b5321b"]);
+    
   
-   <LayerCake
-      padding={{bottom: 15}}
-      x={xKey}
-      z={zKey}
-      r={rKey}
-      zScale={scaleOrdinal()}
-      zDomain={Array.from(seriesNames)}
-      zRange={seriesColors_better}
-      data={dataTransformed}
-      let:width
-    >
+  // let seriesColors_better = [];
   
+  // for (let i = 0; i < 100; i+=5) {
+  //   seriesColors_better.push(colorScale_hisp(i));
+  // }
   
-  
-    -->
-  
-    <!-- zDomain={[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]}
-     -->
+  //const seriesColors_better = ['#ffdecc', '#ffc09c', '#ffa06b', '#ff7a33'];
+
+
+
+  -->

@@ -31,6 +31,9 @@
 		// 	//nodes.forEach((d)=>{d = d[titleKey];});
 		// 	//(d)=>{d[xKey] = d[titleKey];}
 		// }
+		if (step == 1) {
+			nodes = nodes.filter(d=> d.hispanic_above_70 == 'More than 70');
+		}
 		if (step == 2) {
 			nodes = nodes.concat($data.filter(d => d.hispanic_above_70 == 'Below 70'));
 		}

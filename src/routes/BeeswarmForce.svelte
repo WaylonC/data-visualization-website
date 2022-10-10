@@ -76,8 +76,8 @@
 		////so getX and getY here refer to the dot's actual position on the chart, not their underlying values
 		//.force('x', forceX().x(d => $xGet(d)).strength(xStrength))
 		 .force('x', forceX().x(d => {
-			return $xGet(d);
-				//return step != 0 ? $xGet(d) : Math.random() * (((width/2)+(width/15))-((width/2)-(width/15))) + ((width/2)-(width/15)); //IF STEP IS 0, DISTRIBUTE IN CENTER, IF NOT, DISTRIBUTE NORMALLY
+			//return $xGet(d);
+			return step != 0 ? $xGet(d) : Math.random() * (((width/2)+(width/15))-((width/2)-(width/15))) + ((width/2)-(width/15)); //IF STEP IS 0, DISTRIBUTE IN CENTER, IF NOT, DISTRIBUTE NORMALLY
 		 	}).strength(xStrength))
 		.force('y', forceY().y($height / 2).strength(yStrength))
 		//.force('collide',forceCollide().radius(d => $rGet(d)*rScale)) //COLLISSION TAKING RADIUS INTO ACCOUNT

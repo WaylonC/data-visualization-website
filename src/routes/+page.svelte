@@ -47,9 +47,9 @@
 
 <!-- <Map step={current_Step} /> -->
 
-<!-- <MyBeeSwarm step={current_Step} /> -->
+<MyBeeSwarm step={current_Step} />
 
-<OG step={current_Step}/>
+<!-- <OG step={current_Step}/> --> 
 
 </section>
 

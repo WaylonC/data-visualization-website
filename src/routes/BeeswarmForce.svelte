@@ -31,10 +31,10 @@
 		// 	//nodes.forEach((d)=>{d = d[titleKey];});
 		// 	//(d)=>{d[xKey] = d[titleKey];}
 		// }
-		if (step == 1) {
+		if (step == 5) {
 			nodes = nodes.filter(d=> d.hispanic_above_70 == 'More than 70');
 		}
-		if (step == 2) {
+		if (step == 6) {
 			nodes = nodes.concat($data.filter(d => d.hispanic_above_70 == 'Below 70'));
 		}
 
@@ -80,7 +80,7 @@
 		//.force('x', forceX().x(d => $xGet(d)).strength(xStrength))
 		 .force('x', forceX().x(d => {
 			//return $xGet(d);
-			return step != 0 ? $xGet(d) : Math.random() * (((width/2)+(width/15))-((width/2)-(width/15))) + ((width/2)-(width/15)); //IF STEP IS 0, DISTRIBUTE IN CENTER, IF NOT, DISTRIBUTE NORMALLY
+			return step != 5 ? $xGet(d) : Math.random() * (((width/2)+(width/15))-((width/2)-(width/15))) + ((width/2)-(width/15)); //IF STEP IS 0, DISTRIBUTE IN CENTER, IF NOT, DISTRIBUTE NORMALLY
 		 	}).strength(xStrength))
 		.force('y', forceY().y($height / 2).strength(yStrength))
 		//.force('collide',forceCollide().radius(d => $rGet(d)*rScale)) //COLLISSION TAKING RADIUS INTO ACCOUNT

@@ -13,13 +13,13 @@
     });
 
     $: {
-      if (step == 0) {
-        color.set(rgb(initialColor));
-      }
-      if (step == 1) {
-        color.set(rgb(initialColor));
-      }
       if (step == 2) {
+        color.set(rgb(initialColor));
+      }
+      if (step == 3) {
+        color.set(rgb(initialColor));
+      }
+      if (step == 4) {
         color.set(rgb(futureColor));
       }
     }

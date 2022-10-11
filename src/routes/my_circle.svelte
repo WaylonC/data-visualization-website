@@ -34,30 +34,25 @@ function getRandomInt(min, max) {
 }
 
 
-const dist_r = 100 * Math.sqrt(Math.random());
-//const dist_r = 200 * Math.random();
-
-const dist_theta = Math.random() * 2 * Math.PI;
 
 
 
 //in this phase, we need to determine if uh....not sure yet actually
 
 $: {
-  if (step == 0) {
+  if (step == 5) {
     tweenedX.set(c_cx);
     tweenedY.set(c_cy);
     tweenedOpacity.set(1);
   }
-   if (step == 1) {
+   if (step == 6) {
      tweenedX.set(c_cx);
      tweenedY.set(c_cy);
    }
-   if (step == 2) {
+   if (step == 7) {
      tweenedX.set(c_cx);
      tweenedY.set(c_cy);
-     //need to also set opacity fade in for below-70s....
-     tweenedOpacity.set(1);
+     tweenedOpacity.set(1);     //need to also set opacity fade in for below-70s....
    }
 }
 

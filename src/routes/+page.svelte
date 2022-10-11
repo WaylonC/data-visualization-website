@@ -10,10 +10,11 @@
   let current_Step = 0;
 
   //diff components
+  //this is also where you set the order of them
   const options = [
-		{ component: OG},
-		{ component: Map},
-		{ component: MyBeeSwarm}
+		{ c_step: 0, component: OG},
+		{ c_step: 2, component: Map},
+		{ c_step: 5, component: MyBeeSwarm}
 	];
   let selected = options[0];
   
@@ -89,7 +90,7 @@
   </select> -->
     
 
- <svelte:component this={selected.component} step={current_Step}/>
+ <svelte:component this={selected.component} step={current_Step - selected.c_step}/>
 
  <!-- <Map step={current_Step} /> -->
 

@@ -40,16 +40,16 @@ function getRandomInt(min, max) {
 //in this phase, we need to determine if uh....not sure yet actually
 
 $: {
-  if (step == 5) {
+  if (step == 0) {
     tweenedX.set(c_cx);
     tweenedY.set(c_cy);
     tweenedOpacity.set(1);
   }
-   if (step == 6) {
+   if (step == 1) {
      tweenedX.set(c_cx);
      tweenedY.set(c_cy);
    }
-   if (step == 7) {
+   if (step == 2) {
      tweenedX.set(c_cx);
      tweenedY.set(c_cy);
      tweenedOpacity.set(1);     //need to also set opacity fade in for below-70s....

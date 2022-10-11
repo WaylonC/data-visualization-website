@@ -1,10 +1,10 @@
 <script>
 
-  export let step = 1;
+  export let step = 0;
 
   import { geoAlbers, geoPath, geoMercator } from "d3-geo";
   import { extent } from "d3-array";
-  import { scaleLinear } from "d3-scale";
+  import { scaleLinear , scaleThreshold} from "d3-scale";
   import { tile } from "d3-tile";
   import { select, selectAll } from "d3";
   import { onMount } from "svelte";
@@ -33,7 +33,8 @@
 
   //color stuff
   
-  let colorScale_hisp = ()=> {};
+  //let colorScale_hisp = ()=> {};
+  let colorScale_votes_2020 = ()=> {};
   let colorScale_trumpdiff = ()=> {};
   const opacity = tweened(0, {
     duration: 1000
@@ -58,16 +59,25 @@
     
     const topoData = feature(json, json.objects.precincts_pops_votes_all_precincts_topojson_file_no_zeroes_redundant); 
         
-    const hispExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_pop_hisp_pct);
-    colorScale_hisp = scaleLinear()
-      .domain(hispExtent)
-      .range(["#feedde", "#fd8d3c"]);
+    //const votesExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_pop_hisp_pct);
+    // colorScale_hisp = scaleLinear()
+    //   .domain(hispExtent)
+    //   .range(["#feedde", "#fd8d3c"]);
+    colorScale_votes_2020 = scaleThreshold()
+       //.domain([0,25,50,75,100])
+       //.range(['black','blue','brightblue','red','green','yellow']);
+       .domain([0,50,100])
+       .range(['black','blue','red']);
 
 
-    const trumpdiffExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
-    colorScale_trumpdiff = scaleLinear()
-      .domain(trumpdiffExtent)
-      .range(["#feedde", "#fd8d3c"]);
+    //const trumpdiffExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
+    //colorScale_trumpdiff = scaleLinear()
+    //  .domain(trumpdiffExtent)
+    //  .range(["#feedde", "#fd8d3c"]);
+
+    colorScale_trumpdiff = scaleThreshold()
+      .domain([0,50,100])
+      .range(['blue','red','black']);
     
   
 
@@ -164,7 +174,7 @@
  
   <Feature
     featurePath={path(feature)}
-    initialColor={colorScale_hisp(feature.properties.precincts_pops_votes_small_precincts_included_pop_hisp_pct)}
+    initialColor={colorScale_votes_2020(feature.properties.precincts_pops_votes_small_precincts_included_votes_trump_pct_2020)}
     futureColor={colorScale_trumpdiff(feature.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference)}
     step={step} />
 

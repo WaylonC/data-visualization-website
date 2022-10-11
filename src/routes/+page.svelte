@@ -89,7 +89,7 @@
   </select> -->
     
 
- <svelte:component this={selected.component} step={current_Step} transition:fly={{duration: 2000, x:300, y:300}}/>
+ <svelte:component this={selected.component} step={current_Step}/>
 
  <!-- <Map step={current_Step} /> -->
 

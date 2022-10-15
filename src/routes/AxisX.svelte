@@ -13,7 +13,7 @@
 	export let tickMarks = true;
 
 	/** @type {Boolean} [baseline=false] – Show a solid line at the bottom. */
-	export let baseline = false;
+	export let baseline = true;
 
 	/** @type {Boolean} [snapTicks=false] - Instead of centering the text on the first and the last items, align them to the edges of the chart. */
 	export let snapTicks = false;
@@ -76,7 +76,7 @@
 
 <style>
 	.tick {
-		font-size: .725em;
+		font-size: .725em; /*DEFAULT .725em*/
 		font-weight: 200;
 	}
 

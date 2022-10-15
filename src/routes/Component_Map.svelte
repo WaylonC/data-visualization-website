@@ -26,7 +26,7 @@
 
 
   //projecton stuff
-  const projection = geoMercator().scale(38000).center([-98.5,29.47]).translate([487.5, 305]);
+  const projection = geoMercator().scale(38000).center([-98.5,29.50]).translate([487.5, 305]);
   const path = geoPath().projection(projection);
 
 
@@ -146,7 +146,7 @@
   /*da regular stuff to keep */
   
   #test::after {
-    content: "";
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -154,8 +154,8 @@
   height: 750px;/*100%;*/
   background-image: radial-gradient(circle closest-side at center,
     rgba(255, 255, 255, 0) 0,
-    rgba(255, 255, 255, 0) 70%, 
-    rgba(255, 255, 255, 1) 100%
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 1) 85%
   );
   /*box-shadow: inset 0 0 90px 140px rgb(255 255 255);*/
 }

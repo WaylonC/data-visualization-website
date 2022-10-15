@@ -19,10 +19,10 @@
 
   //map stuff
   let data = [];
-  // const width = "960";
-  // const height = "700";
-  const width = "2000";
-  const height = "1500";
+   const width = "960";
+   const height = "700";
+  //const width = "2000";
+  //const height = "1500";
 
 
   //projecton stuff
@@ -64,10 +64,14 @@
     //   .domain(hispExtent)
     //   .range(["#feedde", "#fd8d3c"]);
     colorScale_votes_2020 = scaleThreshold()
+       //.domain([0,17,33,50,67,83,100])
        //.domain([0,25,50,75,100])
-       //.range(['black','blue','brightblue','red','green','yellow']);
-       .domain([0,50,100])
-       .range(['black','blue','red']);
+       .domain([0,17,33,50,67,83,100])
+       .range(['black','#47abd8','#6EBFE2','#95D2EC','#FF4242','#E82F2F','#D01B1B','white']);
+       //.domain([0,50,100])
+       //.range(['black','blue','red']);
+
+       //#D01B1B, #FF4242, #FFFFFF, #e7f9ff, #95D2EC and #47abd8
 
 
     //const trumpdiffExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
@@ -76,9 +80,11 @@
     //  .range(["#feedde", "#fd8d3c"]);
 
     colorScale_trumpdiff = scaleThreshold()
-      .domain([0,50,100])
-      .range(['blue','red','black']);
+      .domain([-6,-3,0,3,6])
+      .range(['#47abd8','#6EBFE2','#95D2EC','#FF4242','#E82F2F','#D01B1B']);
+      //.range(['blue','red','black']);
     
+
   
 
     data = topoData.features;
@@ -98,7 +104,8 @@
       .selectAll("image")
       .data(tiles)
       .enter().append("image")
-      .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tile.openstreetmap.org/" + d[2] + "/" + d[0] + "/" + d[1] + ".png";})
+      .attr("xlink:href", function(d) {return "http://stamen-tiles.a.ssl.fastly.net/toner/" + d[2] + "/" + d[0] + "/" + d[1] + ".png";})
+      //.attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tile.openstreetmap.org/" + d[2] + "/" + d[0] + "/" + d[1] + ".png";})
       .attr("x", d => (d[0] + tiles.translate[0]) * tiles.scale )  //OOOHHH.. so the problem has something to do with how "tiles.blah" is referred...
       .attr("y", function(d) { return (d[1] + tiles.translate[1]) * tiles.scale; })
       .attr("width", tiles.scale)
@@ -137,11 +144,24 @@
 
 
   /*da regular stuff to keep */
-  svg {
-    width: width;
-    height: height;
-    background-color: "#eeeeee";
-  }
+  
+  #test::after {
+    content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1000px;/*100%;*/    /*WHEN TWEAKING FOR SCREEN SIZES, THIS WILL NEED TO BE LOOKED AT!!!!*/
+  height: 750px;/*100%;*/
+  background-image: radial-gradient(circle closest-side at center,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0) 70%, 
+    rgba(255, 255, 255, 1) 100%
+  );
+  /*box-shadow: inset 0 0 90px 140px rgb(255 255 255);*/
+}
+
+
+
   .borders {
     fill: #ddd;
   }
@@ -156,7 +176,7 @@
 
 
 
-
+<div id="test">
 <svg width={width} height={height} bind:this={my_thing}>
 
 
@@ -182,3 +202,4 @@
   {/each}
 
 </svg>
+</div>

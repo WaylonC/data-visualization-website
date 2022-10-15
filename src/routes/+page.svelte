@@ -55,11 +55,11 @@
 
 
   $: {
-      if (current_Step > 1 && current_Step < 4) {
+      if (current_Step > 4) {  //honestly might be a good idea to make these into variables
         selected = options[1];
       }
-      else if (current_Step > 4 ) {
-        selected = options[2];
+      else if (current_Step < 4 ) {
+        selected = options[0];
       }
   };
 

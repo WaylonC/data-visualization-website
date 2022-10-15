@@ -17,9 +17,6 @@
         color.set(rgb(initialColor));
       }
       if (step == 1) {
-        color.set(rgb(initialColor));
-      }
-      if (step == 2) {
         color.set(rgb(futureColor));
       }
     }

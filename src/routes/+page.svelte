@@ -11,7 +11,7 @@
 
   //diff components
   //this is also where you set the order of them
-  const BeeSwarmStep = 3;
+  const BeeSwarmStep = 4;
 
   const options = [
 		//{ c_step: 0, component: OG},

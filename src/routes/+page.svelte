@@ -11,10 +11,12 @@
 
   //diff components
   //this is also where you set the order of them
+  const BeeSwarmStep = 3;
+
   const options = [
 		//{ c_step: 0, component: OG},
 		{ c_step: 0, component: Map},
-		{ c_step: 5, component: MyBeeSwarm}
+		{ c_step: BeeSwarmStep, component: MyBeeSwarm}
 	];
   let selected = options[0];
   
@@ -55,10 +57,10 @@
 
 
   $: {
-      if (current_Step > 4) {  //honestly might be a good idea to make these into variables
+      if (current_Step >= BeeSwarmStep) {  //honestly might be a good idea to make these into variables
         selected = options[1];
       }
-      else if (current_Step < 4 ) {
+      else if (current_Step < BeeSwarmStep ) {
         selected = options[0];
       }
   };

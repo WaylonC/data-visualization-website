@@ -12,8 +12,8 @@
   //diff components
   //this is also where you set the order of them
   const options = [
-		{ c_step: 0, component: OG},
-		{ c_step: 2, component: Map},
+		//{ c_step: 0, component: OG},
+		{ c_step: 0, component: Map},
 		{ c_step: 5, component: MyBeeSwarm}
 	];
   let selected = options[0];
@@ -53,7 +53,6 @@
 
   })
 
-  $: {console.log(selected)};
 
   $: {
       if (current_Step > 1 && current_Step < 4) {
@@ -70,7 +69,7 @@
 
 <section>
 
-
+  <!-- 
   <select bind:value={current_Step}>
     <option value=0> 0 </option>
     <option value=1> 1 </option>
@@ -80,24 +79,11 @@
     <option value=5> 5 </option>
     <option value=6> 6 </option> 
     <option value=7> 7 </option> 
-  </select>
-
-
-  <!-- <select bind:value={options[current_Step].component}>
-    {#each options as option}
-      <option value={option}>yep</option>
-    {/each}
   </select> -->
     
 
  <svelte:component this={selected.component} step={current_Step - selected.c_step}/>
 
- <!-- <Map step={current_Step} /> -->
-
-
-<!-- <MyBeeSwarm step={current_Step} /> -->
-
-<!-- <OG step={current_Step}/> --> 
 
 </section>
 

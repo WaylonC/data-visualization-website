@@ -5,6 +5,7 @@
   import Map from "./Component_Map.svelte";
   import MyBeeSwarm from "./Component_Beeswarm.svelte";
   import OG from "./og.svelte";
+  import { fade } from 'svelte/transition';
     
   //let value;
   let current_Step = 0;
@@ -67,11 +68,14 @@
 
 
 
+
+
+
 </script>
 
 <section>
 
-  <!-- 
+  
   <select bind:value={current_Step}>
     <option value=0> 0 </option>
     <option value=1> 1 </option>
@@ -81,10 +85,12 @@
     <option value=5> 5 </option>
     <option value=6> 6 </option> 
     <option value=7> 7 </option> 
-  </select> -->
+  </select> 
     
 
- <svelte:component this={selected.component} step={current_Step - selected.c_step}/>
+  <div id="viewport" transition:fade> <!-- not working atm-->
+    <svelte:component this={selected.component} step={current_Step - selected.c_step}/>
+  </div>
 
 
 </section>

@@ -104,7 +104,10 @@
     
     
       <Svg>
-        <AxisX/>
+        {#if step > 0 }
+          <AxisX/>
+        {/if}
+        
         <Beeswarm
           step={step}
           width={width}
@@ -115,9 +118,10 @@
         />
       </Svg>
     
-      <Html pointerEvents={false}>
-        <Key shape='circle' />
-      </Html>
+      <!-- THIS IS WHERE YOU WOULD PUT THEY KEY-->
+      <!-- <Html pointerEvents={false}>
+        <Key shape='circle'/>
+      </Html> -->
     
     </LayerCake>
   

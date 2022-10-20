@@ -13,7 +13,7 @@
     
   const width = 1200;
   //const height = 700;
-  const height = 1200;
+  const height = 800;
   
   const xKey = 'votes_trump_difference';
   const zKey = 'pop_hisp_pct';

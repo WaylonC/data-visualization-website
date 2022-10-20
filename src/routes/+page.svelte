@@ -8,7 +8,7 @@
   import { fade } from 'svelte/transition';
     
   //let value;
-  let current_Step = 0;
+  let current_Step = 4;
 
   //diff components
   //this is also where you set the order of them

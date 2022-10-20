@@ -12,7 +12,7 @@
   import data from './for_beeswarm.js';
     
   const width = 1200;
-  const height = 500;
+  const height = 700;
   
   const xKey = 'votes_trump_difference';
   const zKey = 'pop_hisp_pct';

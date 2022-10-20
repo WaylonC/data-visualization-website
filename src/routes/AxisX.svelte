@@ -28,7 +28,7 @@
 	export let xTick = 0;
 
 	/** @type {Number} [yTick=16] - The distance from the baseline to place each tick value. Default is 16*/
-	export let yTick = 33;
+	export let yTick = -33;
 
 	$: isBandwidth = typeof $xScale.bandwidth === 'function';
 

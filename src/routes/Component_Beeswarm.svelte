@@ -12,8 +12,8 @@
   import data from './for_beeswarm.js';
     
   const width = 1200;
-  //const height = 700;
-  const height = 800;
+  const height = 700;
+  //const height = 800;
   
   const xKey = 'votes_trump_difference';
   const zKey = 'pop_hisp_pct';
@@ -90,7 +90,8 @@
   
   
     <div class='chart-container' style='--width:{width}; --height:{height}'>
-  
+    <!-- <div class='chart-container' width={width} height={height} >
+   -->
    
     <LayerCake
       padding={{bottom: 15}}

@@ -11,11 +11,11 @@
   import { tweened } from "svelte/motion";
   import data from './for_beeswarm.js';
     
-  const width = 1200;
+
+  export let w = 700;
   const height = 700;
   
-  //export let width = 100;
-  //export let height = 100;
+
   
   
   const xKey = 'votes_trump_difference';
@@ -70,6 +70,8 @@
           return temp_data;
       }
   }
+
+  console.log("inside the beeswarm the width value is " + w);
   
 
       
@@ -83,7 +85,7 @@
       expand to fill it.
     */
     .chart-container {
-      width: calc(var(--width) * 1px);
+      width: calc(var(--w) * 1px);
       height: calc(var(--height) * 1px);
     }
     </style>
@@ -92,7 +94,7 @@
   
   
   
-    <div class='chart-container' style='--width:{width}; --height:{height}'>
+    <div class='chart-container' style='--width:{w}; --height:{height}'>
     <!-- <div class='chart-container' width={width} height={height} >
    -->
    
@@ -104,7 +106,7 @@
       zScale={scaleQuantize()}
       zRange={seriesColors_better}
       data={dataTransformed}
-      let:width
+      let:w 
     >
     
     
@@ -115,7 +117,7 @@
         
         <Beeswarm
           step={step}
-          width={width}
+          width={w}
           strokeWidth={1}
           xStrength={0.95}
           yStrength={0.075}

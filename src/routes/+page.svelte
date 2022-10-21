@@ -19,6 +19,8 @@
 		{ c_step: BeeSwarmStep, component: MyBeeSwarm}
 	];
   let selected = options[0];
+
+  let w, h;
   
 
   //comment the onmoutn thing below when you want to switch to in-svelte scrolly
@@ -77,10 +79,11 @@
   </select> 
     
 
-  <div id="viewport" transition:fade> <!-- not working atm-->
-    <svelte:component this={selected.component} step={current_Step - selected.c_step} />
+  <div id="viewport" transition:fade bind:clientWidth={w} bind:clientHeight={h}> <!-- not working atm-->
+    <svelte:component this={selected.component} step={current_Step - selected.c_step} w={w} />
   </div>
 
+  {console.log("inside the +page the width is " + w)}
 
 </section>
 

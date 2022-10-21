@@ -112,6 +112,7 @@
       .attr("height", tiles.scale);
 
       console.log(tiles.translate);
+      console.log("inside the map the width value is " + width);
     
   
   

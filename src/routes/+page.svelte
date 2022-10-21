@@ -8,14 +8,13 @@
   import { fade } from 'svelte/transition';
     
   //let value;
-  let current_Step = 4;
+  let current_Step = 0;
 
   //diff components
   //this is also where you set the order of them
   const BeeSwarmStep = 4;
 
   const options = [
-		//{ c_step: 0, component: OG},
 		{ c_step: 0, component: Map},
 		{ c_step: BeeSwarmStep, component: MyBeeSwarm}
 	];
@@ -33,16 +32,6 @@
   
       current_Step = index;
 
-
-      // //switching between da components
-      // if (current_Step > 1) {
-      //   selected = options[1];
-      // }
-      // else if (current_Step > 4 ) {
-      //   selected = options[2];
-      // }
-      
-      //selected = options[current_Step];
 
       console.log("pymchild has received a message. the index is...");
       console.log(index);
@@ -89,7 +78,7 @@
     
 
   <div id="viewport" transition:fade> <!-- not working atm-->
-    <svelte:component this={selected.component} step={current_Step - selected.c_step}/>
+    <svelte:component this={selected.component} step={current_Step - selected.c_step} />
   </div>
 
 
@@ -105,9 +94,15 @@
   .sticky {
     position: sticky;
     top: 10%;
-        /*flex: 1 1 60%;
+    /*flex: 1 1 60%;
     width: 70%;*/
   }
+
+  .select {
+    z-index: 1;
+  }
+
+
 
 
 </style>
@@ -115,17 +110,6 @@
 
 
 
-
-
-
-
-    <!-- <option value=0> 0 </option>
-    <option value=1> 1 </option>
-    <option value=2> 2 </option>
-    <option value=3> 3 </option>
-    <option value=4> 4 </option>
-    <option value=5> 5 </option>
-    <option value=6> 6 </option> -->
 
 
 

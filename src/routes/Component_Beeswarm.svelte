@@ -13,7 +13,10 @@
     
   const width = 1200;
   const height = 700;
-  //const height = 800;
+  
+  //export let width = 100;
+  //export let height = 100;
+  
   
   const xKey = 'votes_trump_difference';
   const zKey = 'pop_hisp_pct';
@@ -128,7 +131,7 @@
     </LayerCake>
   
     </div>
-  
+
 
 
   <!-- DETRTIUS!! -->

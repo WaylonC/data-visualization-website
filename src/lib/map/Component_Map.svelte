@@ -19,11 +19,17 @@
 
   //map stuff
   let data = [];
-   const width = "960";
-   const height = "700";
-  //const width = "2000";
-  //const height = "1500";
+  
+  export let w = "800";
+  export let h = "700";
+  const width = w;
+  const height = h;
+  
+  //const width = "960";
+  //const height = "700";
 
+
+  
 
   //projecton stuff
   const projection = geoMercator().scale(38000).center([-98.5,29.50]).translate([487.5, 305]);
@@ -113,6 +119,7 @@
 
       console.log(tiles.translate);
       console.log("inside the map the width value is " + width);
+      console.log("inside the map the height value is " + height);
     
   
   
@@ -151,13 +158,13 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 1000px;/*100%;*/    /*WHEN TWEAKING FOR SCREEN SIZES, THIS WILL NEED TO BE LOOKED AT!!!!*/
+  width: 1000px;  /*100%;*/    /*WHEN TWEAKING FOR SCREEN SIZES, THIS WILL NEED TO BE LOOKED AT!!!!*/
   height: 750px;/*100%;*/
-  background-image: radial-gradient(circle closest-side at center,
+  /*background-image: radial-gradient(circle closest-side at center,
     rgba(255, 255, 255, 0) 0,
     rgba(255, 255, 255, 0) 75%,
     rgba(255, 255, 255, 1) 85%
-  );
+  );*/
   /*box-shadow: inset 0 0 90px 140px rgb(255 255 255);*/
 }
 

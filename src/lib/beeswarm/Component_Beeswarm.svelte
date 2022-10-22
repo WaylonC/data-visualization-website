@@ -13,6 +13,7 @@
     
 
   export let w = 700;
+  export let h = 700;
   const height = 700;
   
 
@@ -72,7 +73,7 @@
   }
 
   console.log("inside the beeswarm the width value is " + w);
-  
+  console.log("inside the beeswarm the height value is " + h); 
 
       
     </script>
@@ -94,7 +95,7 @@
   
   
   
-    <div class='chart-container' style='--width:{w}; --height:{height}'>
+    <div class='chart-container' style='--width:{w}; --height:{h}'>
     <!-- <div class='chart-container' width={width} height={height} >
    -->
    

@@ -67,7 +67,7 @@
 <section>
 
   
-  <select bind:value={current_Step}>
+  <!-- <select bind:value={current_Step}>
     <option value=0> 0 </option>
     <option value=1> 1 </option>
     <option value=2> 2 </option>
@@ -76,7 +76,7 @@
     <option value=5> 5 </option>
     <option value=6> 6 </option> 
     <option value=7> 7 </option> 
-  </select> 
+  </select>  -->
   
 
   <div id="viewport" transition:fade bind:clientWidth={w} bind:clientHeight={h}> <!-- not working atm-->

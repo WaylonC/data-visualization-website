@@ -32,7 +32,6 @@
   
   
 
-  
   const seriesColors_better = [
   '#FBFAFE',
   '#E7E1F8',
@@ -67,7 +66,7 @@
   
   
   function checkNotOutlier(temp_data) {
-      if ((temp_data[xKey] <= 10) && (temp_data[xKey] >= -10)) {  //if you cannot get the radius to change based on pop size, add this : && (temp_data[popKey] > 100)
+      if ((temp_data[xKey] <= 9) && (temp_data[xKey] >= -9)) {  //if you cannot get the radius to change based on pop size, add this : && (temp_data[popKey] > 100)
           return temp_data;
       }
   }
@@ -136,28 +135,3 @@
     </div>
 
 
-
-  <!-- DETRTIUS!! -->
-
-  <!-- 
-
-    it's .95 for xstrength
-    and .075 for ystrength
-
-  //const hispExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
-  let colorScale_hisp = scaleLinear()
-      .domain([0,100])
-      .range(["#53bd1a","#b5321b"]);
-    
-  
-  // let seriesColors_better = [];
-  
-  // for (let i = 0; i < 100; i+=5) {
-  //   seriesColors_better.push(colorScale_hisp(i));
-  // }
-  
-  //const seriesColors_better = ['#ffdecc', '#ffc09c', '#ffa06b', '#ff7a33'];
-
-
-
-  -->

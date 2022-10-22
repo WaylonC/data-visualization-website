@@ -36,7 +36,7 @@
   let projection = geoMercator().scale(50000).center([-98.4,29.50]).translate([487.5, 305]);
   
   if (w <= "800") { //ADJUSTMENT FOR MOBILE DEVICES
-    projection = geoMercator().scale(35000).center([-98.1,29.50]).translate([487.5, 305]);
+    projection = geoMercator().scale(35000).center([-98.05,29.50]).translate([487.5, 305]);
   }
 
   const path = geoPath().projection(projection);

@@ -9,7 +9,7 @@ export default [
       votes_biden_pct_2020: 68,
       votes_trump_pct_2016: 28,
       votes_clinton_pct_2016: 68,
-      votes_trump_difference: 12,
+      votes_trump_difference: 10,
       income_below_median: 'Below',
       hispanic_above_70: 'More than 70',
       college_below_median: 'Below College median'
@@ -24,7 +24,7 @@ export default [
       votes_biden_pct_2020: 68,
       votes_trump_pct_2016: 28,
       votes_clinton_pct_2016: 68,
-      votes_trump_difference: -12,
+      votes_trump_difference: -10,
       income_below_median: 'Below',
       hispanic_above_70: 'More than 70',
       college_below_median: 'Below College median'

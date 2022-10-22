@@ -77,14 +77,13 @@
     <option value=6> 6 </option> 
     <option value=7> 7 </option> 
   </select> 
-    
+  
 
   <div id="viewport" transition:fade bind:clientWidth={w} bind:clientHeight={h}> <!-- not working atm-->
     <svelte:component this={selected.component} step={current_Step - selected.c_step} w={w} h={h} />
   </div>
 
-  {console.log("inside the +page the width is " + w)}
-  {console.log("inside the +page the height is " + h)}
+
 
 </section>
 

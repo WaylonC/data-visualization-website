@@ -115,14 +115,27 @@
           <AxisX/>
         {/if}
         
-        <Beeswarm
-          step={step}
-          width={w}
-          strokeWidth={1}
-          xStrength={0.95}
-          yStrength={0.075}
-          getTitle={d => d[titleKey]}
-        />
+        {#if w <= "800"}
+          <Beeswarm
+            step={step}
+            width={w}
+            strokeWidth={1}
+            xStrength={0.95}
+            yStrength={0.075}
+            getTitle={d => d[titleKey]}
+            rScale = 0.2
+          />
+        {:else}
+          <Beeswarm
+              step={step}
+              width={w}
+              strokeWidth={1}
+              xStrength={0.95}
+              yStrength={0.075}
+              getTitle={d => d[titleKey]}
+            />
+        
+        {/if}
       </Svg>
     
       <!-- THIS IS WHERE YOU WOULD PUT THEY KEY-->

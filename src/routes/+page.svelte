@@ -83,7 +83,7 @@
     <svelte:component this={selected.component} step={current_Step - selected.c_step} w={w} h={h} />
   </div>
 
-  {console.log("the height in the page.svelte is " + h)}
+
 
 
 

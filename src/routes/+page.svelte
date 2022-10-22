@@ -83,36 +83,13 @@
     <svelte:component this={selected.component} step={current_Step - selected.c_step} w={w} h={h} />
   </div>
 
+  {console.log("the height in the page.svelte is " + h)}
+
 
 
 </section>
 
-<style>
-    :global(body) {
-        /*overflow-x: hidden; */ /*this freaks out when used with the second_svelte map, but was important previously with the d-3 map*/
-    }
-    
-  /* importn */
 
-  .sticky {
-    position: sticky;
-    top: 10%;
-    /*flex: 1 1 60%;
-    width: 70%;*/
-  }
-
-  .select {
-    z-index: 1;
-  }
-
-
-  section {
-    position:relative;
-  }
-
-
-
-</style>
 
 
 

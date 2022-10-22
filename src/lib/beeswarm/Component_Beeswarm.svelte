@@ -13,7 +13,7 @@
     
 
   export let w = 700;
-  export let h = 700;
+  export let h = 750;
   const height = 700;
   
 

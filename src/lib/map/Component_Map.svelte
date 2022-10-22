@@ -28,12 +28,17 @@
   //const width = "960";
   //const height = "700";
 
-
+  console.log("map w is " + w);
   
 
   //projecton stuff
   //const projection = geoMercator().scale(38000).center([-98.5,29.50]).translate([487.5, 305]);  //DEFAULT SETTING
-  const projection = geoMercator().scale(50000).center([-98.4,29.50]).translate([487.5, 305]);
+  let projection = geoMercator().scale(50000).center([-98.4,29.50]).translate([487.5, 305]);
+  
+  if (w <= "800") { //ADJUSTMENT FOR MOBILE DEVICES
+    projection = geoMercator().scale(35000).center([-98.1,29.50]).translate([487.5, 305]);
+  }
+
   const path = geoPath().projection(projection);
 
 
@@ -66,30 +71,16 @@
     
     const topoData = feature(json, json.objects.precincts_pops_votes_all_precincts_topojson_file_no_zeroes_redundant); 
         
-    //const votesExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_pop_hisp_pct);
-    // colorScale_hisp = scaleLinear()
-    //   .domain(hispExtent)
-    //   .range(["#feedde", "#fd8d3c"]);
-    colorScale_votes_2020 = scaleThreshold()
-       //.domain([0,17,33,50,67,83,100])
-       //.domain([0,25,50,75,100])
+
+    colorScale_votes_2020 = scaleThreshold() 
        .domain([0,17,33,50,67,83,100])
        .range(['black','#47abd8','#6EBFE2','#95D2EC','#FF4242','#E82F2F','#D01B1B','white']);
-       //.domain([0,50,100])
-       //.range(['black','blue','red']);
 
-       //#D01B1B, #FF4242, #FFFFFF, #e7f9ff, #95D2EC and #47abd8
-
-
-    //const trumpdiffExtent = extent(topoData.features, d => d.properties.precincts_pops_votes_small_precincts_included_votes_trump_difference);
-    //colorScale_trumpdiff = scaleLinear()
-    //  .domain(trumpdiffExtent)
-    //  .range(["#feedde", "#fd8d3c"]);
 
     colorScale_trumpdiff = scaleThreshold()
       .domain([-6,-3,0,3,6])
       .range(['#47abd8','#6EBFE2','#95D2EC','#FF4242','#E82F2F','#D01B1B']);
-      //.range(['blue','red','black']);
+  
     
 
   
@@ -118,9 +109,6 @@
       .attr("width", tiles.scale)
       .attr("height", tiles.scale);
 
-      console.log(tiles.translate);
-      console.log("inside the map the width value is " + width);
-      console.log("inside the map the height value is " + height);
     
   
   
@@ -128,24 +116,8 @@
 
 
 
-  //MORE CRAZY STUFF
-
 
  
-
-    //my homework, when i return to this, is to look at the functioning html page. Look at what "tiles.translate[0]" is SUPPOSED to return. 
-
-
-      //.attr("x", d => (d[0] + tiles.translate[0]) * tiles.scale )  //OOOHHH.. so the problem has something to do with how "tiles.blah" is referred...
-      //.attr("y", function(d) { return (d[1] + tiles.translate[1]) * tiles.scale; })
-      //.attr("width",256);
-      //.attr("width", tiles.scale)
-      //.attr("height", tiles.scale);
-
-
-
-
-//import Icon from "$lib/data/favicon.png"; //this is how you refer to static files?
 </script>
 
 <style>
@@ -177,11 +149,6 @@
   
 </style>
 
-
-<!-- <select bind:value={step}>
-		<option value=1> 1 </option>
-    <option value=2> 2 </option>
-</select> -->
 
 
 

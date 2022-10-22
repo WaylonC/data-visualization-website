@@ -33,7 +33,7 @@
 
   //projecton stuff
   //const projection = geoMercator().scale(38000).center([-98.5,29.50]).translate([487.5, 305]);  //DEFAULT SETTING
-  const projection = geoMercator().scale(50000).center([-98.3,29.50]).translate([487.5, 305]);
+  const projection = geoMercator().scale(50000).center([-98.4,29.50]).translate([487.5, 305]);
   const path = geoPath().projection(projection);
 
 

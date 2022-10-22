@@ -123,7 +123,7 @@
             xStrength={0.95}
             yStrength={0.075}
             getTitle={d => d[titleKey]}
-            rScale = 0.2
+            rScale = 0.3
           />
         {:else}
           <Beeswarm

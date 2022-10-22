@@ -67,7 +67,7 @@
   
   
   function checkNotOutlier(temp_data) {
-      if ((temp_data[xKey] < 10) && (temp_data[xKey] > -10)) {  //if you cannot get the radius to change based on pop size, add this : && (temp_data[popKey] > 100)
+      if ((temp_data[xKey] <= 12) && (temp_data[xKey] >= -12)) {  //if you cannot get the radius to change based on pop size, add this : && (temp_data[popKey] > 100)
           return temp_data;
       }
   }

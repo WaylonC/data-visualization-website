@@ -2,8 +2,8 @@
 
 	
   import { onMount } from 'svelte';
-  import Map from "./Component_Map.svelte";
-  import MyBeeSwarm from "./Component_Beeswarm.svelte";
+  import Map from "../lib/map/Component_Map.svelte";
+  import MyBeeSwarm from "../lib/beeswarm/Component_Beeswarm.svelte";
   import OG from "./og.svelte";
   import { fade } from 'svelte/transition';
     

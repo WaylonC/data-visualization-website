@@ -6,6 +6,7 @@
 
 
 	export let step = 0;
+	
 
 	import { getContext } from 'svelte';
 	import { forceSimulation, forceX, forceY, forceCollide } from 'd3-force';
@@ -31,11 +32,12 @@
 		// 	//nodes.forEach((d)=>{d = d[titleKey];});
 		// 	//(d)=>{d[xKey] = d[titleKey];}
 		// }
-		if (step == 0) {
+		if (step <= 1) {
 			nodes = nodes.filter(d=> d.hispanic_above_70 == 'More than 70');
 		}
-		if (step == 1) {
+		if (step == 2) {
 			nodes = nodes.concat($data.filter(d => d.hispanic_above_70 == 'Below 70'));
+			console.log("we are now adding in all precincts");
 		}
 
 	}
@@ -53,6 +55,7 @@
 	//let r = 4;
 
 	export let width;
+
 
 	/** @type {Number} [strokeWidth=1] – The circle's stroke width in pixels. */
 	export let strokeWidth = 1;
@@ -72,6 +75,7 @@
 	/** @type {Function} [getTitle] — An accessor function to get the field on the data element to display as a hover label using a `<title>` tag. */
 	export let getTitle = undefined;
 
+	console.log("in beeswamForce the width is " + width);
 	
 
 

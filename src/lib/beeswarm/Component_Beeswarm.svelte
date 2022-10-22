@@ -106,7 +106,7 @@
       zScale={scaleQuantize()}
       zRange={seriesColors_better}
       data={dataTransformed}
-      let:w 
+       
     >
     
     

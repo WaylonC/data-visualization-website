@@ -12,7 +12,7 @@
 
   //diff components
   //this is also where you set the order of them
-  const BeeSwarmStep = 4;
+  const BeeSwarmStep = 5;
 
   const options = [
 		{ c_step: 0, component: Map},

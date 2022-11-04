@@ -22,8 +22,8 @@
   
   export let w = "800";
   export let h = "700";
-  const width = w;
-  const height = h;
+  let width = w;
+  let height = h;
   
   //const width = "960";
   //const height = "700";
@@ -77,6 +77,8 @@
       projection = geoMercator().scale(30000).center([-97.9,29.50]).translate([487.5, 305]);
       path = geoPath().projection(projection);
     }
+    width = w;
+    height = h;
 
     
     

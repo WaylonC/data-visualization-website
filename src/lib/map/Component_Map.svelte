@@ -32,14 +32,15 @@
   
 
   //projecton stuff
-  //const projection = geoMercator().scale(38000).center([-98.5,29.50]).translate([487.5, 305]);  //DEFAULT SETTING
   let projection = geoMercator().scale(50000).center([-98.4,29.50]).translate([487.5, 305]);
-  
-  if (w <= "800") { //ADJUSTMENT FOR MOBILE DEVICES
-    projection = geoMercator().scale(30000).center([-97.9,29.50]).translate([487.5, 305]);
-  }
 
-  const path = geoPath().projection(projection);
+  console.log("w is currently a.... " + typeof w);
+  
+  //if (w < "801") { //ADJUSTMENT FOR MOBILE DEVICES
+  //  projection = geoMercator().scale(30000).center([-97.9,29.50]).translate([487.5, 305]);
+  //}
+
+  let path = geoPath().projection(projection);
 
 
 
@@ -72,6 +73,15 @@
     const topoData = feature(json, json.objects.precincts_pops_votes_all_precincts_topojson_file_no_zeroes_redundant); 
         
 
+    if (w <= 800) { //ADJUSTMENT FOR MOBILE DEVICES
+      projection = geoMercator().scale(30000).center([-97.9,29.50]).translate([487.5, 305]);
+      path = geoPath().projection(projection);
+    }
+
+    
+    
+    
+    
     colorScale_votes_2020 = scaleThreshold() 
        .domain([0,17,33,50,67,83,100])
        .range(['black','#47abd8','#6EBFE2','#95D2EC','#FF4242','#E82F2F','#D01B1B','white']);
@@ -88,7 +98,6 @@
     data = topoData.features;
 
     
-  
 
       
     tiles = tile()
@@ -109,7 +118,7 @@
       .attr("width", tiles.scale)
       .attr("height", tiles.scale);
 
-    
+      console.log("inside onmount, w is currently a.... " + typeof w);
   
   
   });

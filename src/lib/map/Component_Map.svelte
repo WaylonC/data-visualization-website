@@ -113,8 +113,8 @@
       .selectAll("image")
       .data(tiles)
       .enter().append("image")
-      .attr("xlink:href", function(d) {return "http://stamen-tiles.a.ssl.fastly.net/toner/" + d[2] + "/" + d[0] + "/" + d[1] + ".png";})
-      //.attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tile.openstreetmap.org/" + d[2] + "/" + d[0] + "/" + d[1] + ".png";})
+      //.attr("xlink:href", function(d) {return "http://stamen-tiles.a.ssl.fastly.net/toner/" + d[2] + "/" + d[0] + "/" + d[1] + ".png";})
+      .attr("xlink:href", function(d) {return "http://" + "abc"[d[1] % 3] + ".tile.openstreetmap.org/" + d[2] + "/" + d[0] + "/" + d[1] + ".png";})
       .attr("x", d => (d[0] + tiles.translate[0]) * tiles.scale )  //OOOHHH.. so the problem has something to do with how "tiles.blah" is referred...
       .attr("y", function(d) { return (d[1] + tiles.translate[1]) * tiles.scale; })
       .attr("width", tiles.scale)
